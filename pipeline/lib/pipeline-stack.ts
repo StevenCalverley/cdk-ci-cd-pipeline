@@ -99,7 +99,11 @@ export class PipelineStack extends Stack {
               "runtime-versions": {
                 nodejs: "20.x",
               },
-              commands: ["npm install -g aws-cdk", "npm install"],
+              commands: [
+                "npm install -g aws-cdk",
+                "cd infrastructure",
+                "npm install",
+              ],
             },
             build: {
               commands: [`cdk deploy --context env=${envName}`],
